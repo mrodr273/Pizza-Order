@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<title>Restaurant Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Raleway|Stardos+Stencil" rel="stylesheet">
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/script.js"></script>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand active" href="#">Connie's Pizza<span class="sr-only">(current)</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Deals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="jumbotron">
+      <form id="form">
+        <h1 class="display-3">Create Your Own Pizza!</h1>
+        <p class="lead">Exactly the way you like it! Choose the size, sauce and the ingredients your belly desires. Yummy!</p>
+        <hr class="my-4">
+        <fieldset>
+          <legend>Choose Pizza Size</legend>
+          <div class="form-group">
+            <div class="form-group">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio1" name="size" class="custom-control-input" value="7" checked="">
+                <label class="custom-control-label" for="customRadio1">7" (Individual)</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio3" name="size" class="custom-control-input" value="10">
+                <label class="custom-control-label" for="customRadio3">10" (Small)</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio4" name="size" class="custom-control-input" value="12">
+                <label class="custom-control-label" for="customRadio4">12" (Medium)</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio5" name="size" class="custom-control-input" value="14">
+                <label class="custom-control-label" for="customRadio5">14" (Large)</label>
+              </div>
+            </div>
+          </div>
+          <legend>Choose the Crust</legend>
+          <div class="form-group">
+            <div class="form-group">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio6" name="crust" class="custom-control-input" value="Thin Crust" checked="">
+                <label class="custom-control-label" for="customRadio6">Thin Crust</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio7" name="crust" class="custom-control-input" value="Cheese-Stuffed">
+                <label class="custom-control-label" for="customRadio7">Cheese-Stuffed</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio8" name="crust" class="custom-control-input" value="NY Style">
+                <label class="custom-control-label" for="customRadio8">NY Style</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio9" name="crust" class="custom-control-input" value="Thin Crust">
+                <label class="custom-control-label" for="customRadio9">Thin Crust/Neapolitan Crust</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio10" name="crust" class="custom-control-input" value="Deep Dish">
+                <label class="custom-control-label" for="customRadio10">Sicilian Style/Chicago Deep Dish</label>
+              </div>
+            </div>
+          </div>
+          <legend>Choose the Sauce</legend>
+          <div class="form-group">
+            <div class="form-group">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio11" name="sauce" class="custom-control-input" calue="Marinara Sauce" checked="">
+                <label class="custom-control-label" for="customRadio11">Original Marinara Sauce</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio12" name="sauce" class="custom-control-input" value="BBQ Sauce">
+                <label class="custom-control-label" for="customRadio12">BBQ Sauce</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio13" name="sauce" class="custom-control-input" value="Alfredo Sauce">
+                <label class="custom-control-label" for="customRadio13">Alfredo Sauce</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio14" name="sauce" class="custom-control-input" value="Pesto Sauce">
+                <label class="custom-control-label" for="customRadio14">Pesto Sauce</label>
+              </div>
+            </div>
+          </div>
+          <fieldset>
+            <legend>Choose your Toppings!</legend>
+            <div class="form-group">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1" name="toppings" value="Cheese" checked="">
+                <label class="custom-control-label" for="customCheck1">Cheese</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck2" name="toppings" value="Pepperonni">
+                <label class="custom-control-label" for="customCheck2">Pepperonni</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck3" name="toppings" value="Chicken" >
+                <label class="custom-control-label" for="customCheck3">Chicken</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck4" name="toppings" value="Beef" >
+                <label class="custom-control-label" for="customCheck4">Beef</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck5" name="toppings" value="Ham" >
+                <label class="custom-control-label" for="customCheck5">Ham</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck6" name="toppings" value="Sausage">
+                <label class="custom-control-label" for="customCheck6">Sausage</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck7" name="toppings" value="Bacon">
+                <label class="custom-control-label" for="customCheck7">Bacon</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck8" name="toppings" value="Banana Peppers" >
+                <label class="custom-control-label" for="customCheck8">Banana Peppers</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck9" name="toppings" value="Onions">
+                <label class="custom-control-label" for="customCheck9">Onions</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck10" name="toppings" value="Mushrooms" >
+                <label class="custom-control-label" for="customCheck10">Mushrooms</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck11" name="toppings" value="Pineaple">
+                <label class="custom-control-label" for="customCheck11">Pineaple</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck12" name="toppings" value="Spinash" >
+                <label class="custom-control-label" for="customCheck12">Spinash</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck13" name="toppings" value="Black Olives" >
+                <label class="custom-control-label" for="customCheck13">Black Olives</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck14" name="toppings" value="Feta Cheese" >
+                <label class="custom-control-label" for="customCheck14">Feta Cheese</label>
+              </div>
+            </div>
+          </fieldset>
+        <input class="btn btn-primary btn-lg id=submit" type="submit" value="Place Order">
+      </div>
+    </div>
+  </main>
+  <aside>
+    <div class="card header mb-3" style="max-width: 20rem;">
+    <div class="card-header"><h1>Checkout</h1></div>
+    <div class="card-body">
+      <h4 class="card-title">Your Order:</h4>
+      <p class="card-text">Pizza size: <span id="size"></span></p>
+      <p class="card-text">Crust: <span id="crust"></span></p>
+      <p class="card-text">Sauce: <span id="sauce"></span></p>
+      <p class="card-text">Toppings: <span id="toppings"></span></p>
+      <p class="card-text">Cost: <span id="cost"></span></p>
+    </div>
+  </aside>
+  <footer>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <p class="navbar-brand active">Connie's Pizza</p><br>
+
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Deals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</body>
+</html>
