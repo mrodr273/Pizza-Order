@@ -13,11 +13,10 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand active" href="#">Connie's Pizza<span class="sr-only">(current)</span></a>
+      <a class="navbar-brand active" href="#"  id="jumpHere">Connie's Pizza<span class="sr-only">(current)</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
@@ -38,14 +37,44 @@
   </header>
   <main>
     <div class="jumbotron">
-      <form id="form">
-        <h1 class="display-3">Create Your Own Pizza!</h1>
-        <p class="lead">Exactly the way you like it! Choose the size, sauce and the ingredients your belly desires. Yummy!</p>
-        <hr class="my-4">
-        <fieldset>
-          <legend>Choose Pizza Size</legend>
-          <div class="form-group">
-            <div class="form-group">
+      <!-- Bootstrap nav tab starts here -->
+      <ul class="nav nav-tabs">
+        <!-- <li class="nav-item">
+          <button type="button" name="help" class="nav-link" data-toggle="tab">Help</button>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#home" id="help-btn">Help</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#profile" id="pizza-btn">Step 1 - Pizza</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#profile" id="side-btn">Step 2 - Side</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#profile" id="drink-btn">Step  3- Drink</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#profile" id="dessert-btn">Step 4 - Dessert</a>
+        </li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade" id="home">
+          <p>Home</p>
+        </div>
+        <div class="tab-pane fade active show" id="help">
+          <h1> Easy as 1, 2, 3 & 4!</h1>
+          <p>Click on the tabs to place an order for your item selection.</p>
+        </div>
+        <div class="tab-pane fade" id="pizza-form">
+          <form id="form-pizza" class="form-pizza">
+            <div class="order-info">
+              <h1 class="display-3">Create Your Own Pizza!</h1>
+              <p class="lead">Exactly the way you like it! Choose the size, sauce and the ingredients your belly desires. Yummy!</p>
+              <hr class="my-4">
+            </div>
+            <div class="form-group order-size">
+              <legend>Choose Pizza Size</legend>
               <div class="custom-control custom-radio">
                 <input type="radio" id="customRadio1" name="size" class="custom-control-input" value="7" checked="">
                 <label class="custom-control-label" for="customRadio1">7" (Individual)</label>
@@ -63,10 +92,9 @@
                 <label class="custom-control-label" for="customRadio5">14" (Large)</label>
               </div>
             </div>
-          </div>
-          <legend>Choose the Crust</legend>
-          <div class="form-group">
-            <div class="form-group">
+
+            <div class="form-group order-crust">
+              <legend>Choose the Crust</legend>
               <div class="custom-control custom-radio">
                 <input type="radio" id="customRadio6" name="crust" class="custom-control-input" value="Thin Crust" checked="">
                 <label class="custom-control-label" for="customRadio6">Thin Crust</label>
@@ -88,12 +116,11 @@
                 <label class="custom-control-label" for="customRadio10">Sicilian Style/Chicago Deep Dish</label>
               </div>
             </div>
-          </div>
-          <legend>Choose the Sauce</legend>
-          <div class="form-group">
-            <div class="form-group">
+
+            <div class="form-group order-sauce">
+              <legend>Choose the Sauce</legend>
               <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio11" name="sauce" class="custom-control-input" calue="Marinara Sauce" checked="">
+                <input type="radio" id="customRadio11" name="sauce" class="custom-control-input" value="Marinara Sauce" checked="">
                 <label class="custom-control-label" for="customRadio11">Original Marinara Sauce</label>
               </div>
               <div class="custom-control custom-radio">
@@ -109,69 +136,173 @@
                 <label class="custom-control-label" for="customRadio14">Pesto Sauce</label>
               </div>
             </div>
-          </div>
-          <fieldset>
-            <legend>Choose your Toppings!</legend>
-            <div class="form-group">
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck1" name="toppings" value="Cheese" checked="">
-                <label class="custom-control-label" for="customCheck1">Cheese</label>
+            <fieldset>
+              <div class="form-group order-toppings">
+                <legend>Choose your Toppings!</legend>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1" name="toppings" value="Cheese" checked="">
+                  <label class="custom-control-label" for="customCheck1">Cheese</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck2" name="toppings" value="Pepperonni">
+                  <label class="custom-control-label" for="customCheck2">Pepperonni</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck3" name="toppings" value="Chicken" >
+                  <label class="custom-control-label" for="customCheck3">Chicken</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck4" name="toppings" value="Beef" >
+                  <label class="custom-control-label" for="customCheck4">Beef</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck5" name="toppings" value="Ham" >
+                  <label class="custom-control-label" for="customCheck5">Ham</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck6" name="toppings" value="Sausage">
+                  <label class="custom-control-label" for="customCheck6">Sausage</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck7" name="toppings" value="Bacon">
+                  <label class="custom-control-label" for="customCheck7">Bacon</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck8" name="toppings" value="Banana Peppers" >
+                  <label class="custom-control-label" for="customCheck8">Banana Peppers</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck9" name="toppings" value="Onions">
+                  <label class="custom-control-label" for="customCheck9">Onions</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck10" name="toppings" value="Mushrooms" >
+                  <label class="custom-control-label" for="customCheck10">Mushrooms</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck11" name="toppings" value="Pineaple">
+                  <label class="custom-control-label" for="customCheck11">Pineaple</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck12" name="toppings" value="Spinash" >
+                  <label class="custom-control-label" for="customCheck12">Spinash</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck13" name="toppings" value="Black Olives" >
+                  <label class="custom-control-label" for="customCheck13">Black Olives</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck14" name="toppings" value="Feta Cheese" >
+                  <label class="custom-control-label" for="customCheck14">Feta Cheese</label>
+                </div>
               </div>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck2" name="toppings" value="Pepperonni">
-                <label class="custom-control-label" for="customCheck2">Pepperonni</label>
+            </fieldset>
+            <input class="btn btn-primary btn-lg id=submit" id="btn-pizza" type="submit" value="Add Pizza">
+          </form>
+        </div>
+        <div class="tab-pane fade" id="side-form">
+          <h1 class="display-3">Choose your sides:</h1>
+          <form class="" action="index.html" method="post" id="form-sides">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="css/boneless.jpg" alt="boneless chicken">
+                <label for="boneless">Boneless Chicken $7</label>
+                <input type="number" name="boneless" id="boneless-orders" value="0">
               </div>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck3" name="toppings" value="Chicken" >
-                <label class="custom-control-label" for="customCheck3">Chicken</label>
+              <div class="col-md-4">
+                <img src="css/wings.jpg" alt="wings">
+                <label for="wings">Wings $6</label><br>
+                <input type="number" name="wings" id="wings-orders" value="0">
               </div>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck4" name="toppings" value="Beef" >
-                <label class="custom-control-label" for="customCheck4">Beef</label>
-              </div>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck5" name="toppings" value="Ham" >
-                <label class="custom-control-label" for="customCheck5">Ham</label>
-              </div>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck6" name="toppings" value="Sausage">
-                <label class="custom-control-label" for="customCheck6">Sausage</label>
-              </div>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck7" name="toppings" value="Bacon">
-                <label class="custom-control-label" for="customCheck7">Bacon</label>
-              </div>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck8" name="toppings" value="Banana Peppers" >
-                <label class="custom-control-label" for="customCheck8">Banana Peppers</label>
-              </div>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck9" name="toppings" value="Onions">
-                <label class="custom-control-label" for="customCheck9">Onions</label>
-              </div>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck10" name="toppings" value="Mushrooms" >
-                <label class="custom-control-label" for="customCheck10">Mushrooms</label>
-              </div>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck11" name="toppings" value="Pineaple">
-                <label class="custom-control-label" for="customCheck11">Pineaple</label>
-              </div>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck12" name="toppings" value="Spinash" >
-                <label class="custom-control-label" for="customCheck12">Spinash</label>
-              </div>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck13" name="toppings" value="Black Olives" >
-                <label class="custom-control-label" for="customCheck13">Black Olives</label>
-              </div>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck14" name="toppings" value="Feta Cheese" >
-                <label class="custom-control-label" for="customCheck14">Feta Cheese</label>
+              <div class="col-md-4">
+                <img src="css/Parmesan-Breadstick.jpg" alt="parmesan breadstick">
+                <label for="wings">Parmesan Breadstick $4</label>
+                <input type="number" name="parmesan-bread" id="parmesan-orders" value="0">
               </div>
             </div>
-          </fieldset>
-        <input class="btn btn-primary btn-lg id=submit" type="submit" value="Place Order">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="css/stuffed-chessy-bread.jpg" alt="stuffed cheesy bread" value="0">
+                <label for="boneless">Stuffed Cheesy Bread $4</label>
+                <input type="number" name="Stuffed Cheesy Bread" id="cheesy-orders" value="0">
+              </div>
+              <div class="col-md-4">
+                <img src="css/chicken-ceasar.jpg" alt="chicken ceasars salad">
+                <label for="wings">Chicken Ceasars Salad $5</label>
+                <input type="number" name="ceasars" id="ceasars-orders" value="0">
+              </div>
+              <div class="col-md-4">
+                <img src="css/classic-garden.jpg" alt="classic garden salad">
+                <label for="wings">Classic Garden Salad $5</label>
+                <input type="number" name="parmesan-bread" id="garden-orders" value="0">
+              </div>
+            </div>
+            <input class="btn btn-primary btn-lg id=submit" id="btn-sides" type="submit" value="Add to Order">
+          </form>
+        </div>
+        <div class="tab-pane fade" id="drink-form">
+          <h1 class="display-3">Choose your drink:</h1>
+          <p>Sodas priced at $1.50 and water bottles at $1.</p>
+          <form class="" action="index.html" method="post" id="form-drinks">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="css/F_COKE.jpg" alt="coca-cola">
+                <label for="boneless">Coke</label><br>
+                <input type="number" name="coke" id="coke-orders" value="0">
+              </div>
+              <div class="col-md-4">
+                <img src="css/F_DIET.jpg" alt="diet coke">
+                <label for="wings">Diet Coke</label><br>
+                <input type="number" name="diet" id="diet-orders" value="0">
+              </div>
+              <div class="col-md-4">
+                <img src="css/F_ZERO.jpg" alt="Zero sugar coke">
+                <label for="wings">Zero Sugar Coke</label>
+                <input type="number" name="zero" id="sugar-orders" value="0">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <img src="css/F_ORAN.jpg" alt="Fanta soda">
+                <label for="fanta">Orange Fanta</label>
+                <input type="number" name="Fanta" id="fanta-orders" value="0">
+              </div>
+              <div class="col-md-4">
+                <img src="css/F_SPRITE.jpg" alt="Sprite soda">
+                <label for="sprite">Sprite</label><br>
+                <input type="number" name="sprite" id="sprite-orders" value="0">
+              </div>
+              <div class="col-md-4">
+                <img src="css/F_WATER.jpg" alt="watter bottle">
+                <label for="water">Dasani Bottle</label>
+                <input type="number" name="water" id="water-orders" value="0">
+              </div>
+            </div>
+            <input class="btn btn-primary btn-lg id=submit" id="btn-drinks" type="submit" value="Add to Order">
+          </form>
+        </div>
+        <div class="tab-pane fade" id="dessert-form">
+          <h1 class="display-3">Choose your dessert:</h1>
+          <form class="" id="form-dessert">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="css/F_BROWN.jpg" alt="brownie">
+                <label for="brownie">Brownies $5</label><br>
+                <input type="number" name="brownies" id="brownies-orders" value="0">
+              </div>
+              <div class="col-md-4">
+                <img src="css/F_CINNA.jpg" alt="cinnamon bread">
+                <label for="cinnamon">Cinnamon Breadtwists $4</label><br>
+                <input type="number" name="cinnamon" id="cinnamon-orders" value="0">
+              </div>
+              <div class="col-md-4">
+                <img src="css/F_LAVA.jpg" alt="Lava cake">
+                <label for="wings">Lava Cakes $4</label>
+                <input type="number" name="zero" id="lava-orders" value="0">
+              </div>
+            </div>
+            <input class="btn btn-primary btn-lg id=submit" id="btn-dessert" type="submit" value="Add to Order">
+        </div>
       </div>
     </div>
   </main>
@@ -179,33 +310,27 @@
     <div class="card header mb-3" style="max-width: 20rem;">
     <div class="card-header"><h1>Checkout</h1></div>
     <div class="card-body">
-      <h4 class="card-title">Your Order:</h4>
-      <p class="card-text">Pizza size: <span id="size"></span></p>
+      <h4 class="card-title">Pizza:</h4>
+      <p class="card-text">Size: <span id="size"></span></p>
       <p class="card-text">Crust: <span id="crust"></span></p>
       <p class="card-text">Sauce: <span id="sauce"></span></p>
       <p class="card-text">Toppings: <span id="toppings"></span></p>
-      <p class="card-text">Cost: <span id="cost"></span></p>
+      <p class="card-text">Cost: $<span id="cost"></span></p>
+      <h4 class="card-title">Sides:</h4>
+      <p>Total Sides: $<span id="costSides"></span></p>
+      <h4 class="card-title">Drinks:</h4>
+      <p>Total Drinks: $<span id="costDrinks"></span></p>
+      <h4 class="card-title">Dessert:</h4>
+      <p>Total Dessert: $<span id="costDessert"></span></p>
+      <h4 class="card-title">Total Cost:</h4>
+
+      <p>Total: $<span id="totalCost"></p>
+      <button type="button" name="total-btn">Find out!</button>
     </div>
   </aside>
   <footer>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <p class="navbar-brand active">Connie's Pizza</p><br>
-
-      <div class="collapse navbar-collapse" id="navbarColor02">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Menu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Deals</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="footer">
+      <p class="navbar-brand active">Made by: Connie Rodriguez</p>
       </div>
     </nav>
   </footer>
