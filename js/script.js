@@ -3,6 +3,8 @@ function Order() {
   this.sides= [];
   this.drinks= [];
   this.dessert = [];
+  this.subtotal=[];
+  this.total;
 }
 function PizzaOrder(size, crust, sauce, toppings) {
   this.size = size;
@@ -49,19 +51,25 @@ DessertOrder.prototype.costDessert = function () {
 }
 // need to confirm that it works
 Order.prototype.totalCost = function () {
-  return this.pizza.costOrder();
+  var sum = this.subtotal.reduce((x, y) => x + y);
+  return sum;
 }
-Order.prototype.addPizzaToOrder = function (newPizza) {
+Order.prototype.addPizzaToOrder = function (newPizza, cost) {
   this.pizza.push(newPizza);
+  this.subtotal.push(cost);
 }
-Order.prototype.addSidesToOrder = function (newSides) {
+
+Order.prototype.addSidesToOrder = function (newSides, cost) {
   this.sides.push(newSides);
+  this.subtotal.push(cost);
 }
-Order.prototype.addDrinksToOrder = function (newDrinks) {
+Order.prototype.addDrinksToOrder = function (newDrinks, cost) {
   this.drinks.push(newDrinks);
+  this.subtotal.push(cost);
 }
-Order.prototype.addDessertToOrder =  function (newDessert) {
+Order.prototype.addDessertToOrder =  function (newDessert, cost) {
   this.dessert.push(newDessert);
+  this.subtotal.push(cost);
 }
 // Document ready
 $(document).ready(function(){
@@ -113,8 +121,7 @@ $(document).ready(function(){
     var gardenInput=parseInt($("input#garden-orders").val());
 
     var newSides = new SidesOrder(bonelessInput, wingsInput, parmesanInput, cheesyInput, ceasersInput, gardenInput);
-    newOrder.addSidesToOrder(newSides);
-    alert(newSides.costSides())
+    newOrder.addSidesToOrder(newSides, newSides.costSides());
     $("span#costSides").text(newSides.costSides());
   });
 
@@ -127,10 +134,8 @@ $(document).ready(function(){
     var spriteInput=parseInt($("input#sprite-orders").val());
     var waterInput=parseInt($("input#water-orders").val());
     var newDrinks = new DrinksOrder(cokeInput, dietInput, sugarInput, fantaInput, spriteInput, waterInput);
-    newOrder.addDrinksToOrder(newDrinks);
-    alert(newDrinks.costDrinks())
+    newOrder.addDrinksToOrder(newDrinks, newDrinks.costDrinks());
     $("span#costDrinks").text(newDrinks.costDrinks());
-    console.log(newDrinks.costDrinks());
   });
 
   $("#form-dessert").submit(function(event) {
@@ -139,10 +144,8 @@ $(document).ready(function(){
     var cinnamonInput=parseInt($("input#cinnamon-orders").val());
     var lavaInput=parseInt($("input#lava-orders").val());
     var newDessert = new DessertOrder(brownieInput, cinnamonInput, lavaInput);
-    newOrder.addDessertToOrder(newDessert);
-    alert(newDessert.costDessert())
+    newOrder.addDessertToOrder(newDessert, newDessert.costDessert());
     $("span#costDessert").text(newDessert.costDessert());
-    console.log(newDessert.costDessert());
   });
 
   $("#form-pizza").submit(function(event) {
@@ -159,7 +162,8 @@ $(document).ready(function(){
     });
 
    var newPizza = new PizzaOrder(sizeInput, crustInput, sauceInput, toppingsInput);
-   newOrder.addPizzaToOrder(newPizza);
+   var pizzaCost= newPizza.costOrder();
+   newOrder.addPizzaToOrder(newPizza, pizzaCost);
    $("span#size").text(newPizza.size);
    $("span#crust").text(newPizza.crust);
    $("span#sauce").text(newPizza.sauce);
@@ -171,10 +175,9 @@ $(document).ready(function(){
    window.location = 'Pizza-Order.html#jumpHere';
   });
   // display total cost
-  // $("#btn-total").click(function() {
-  //   $("span#totalCost").text(newOrder.totalCost());
-  //   alert(newOrder.totalCost())
-  // });
+  $("#btn-total").click(function() {
+    $("span#totalCost").text(newOrder.totalCost());
+  });
   console.log(newOrder);
 
 });

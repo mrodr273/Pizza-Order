@@ -70,6 +70,6 @@ body p {
 #side-form, #drink-form, #dessert-form{
   text-align: center;
 }
-#side-form input, #drink-form input, #dessert-form input {
+#side-form input, #drink-form input, #dessert-form input, btn-total {
   margin-bottom: 15px;
 }
