@@ -49,7 +49,6 @@ DrinksOrder.prototype.costDrinks = function () {
 DessertOrder.prototype.costDessert = function () {
   return this.brownie * 5 + (this.cinnamon + this.lava) * 4;
 }
-// need to confirm that it works
 Order.prototype.totalCost = function () {
   var sum = this.subtotal.reduce((x, y) => x + y);
   return sum;
@@ -58,7 +57,6 @@ Order.prototype.addPizzaToOrder = function (newPizza, cost) {
   this.pizza.push(newPizza);
   this.subtotal.push(cost);
 }
-
 Order.prototype.addSidesToOrder = function (newSides, cost) {
   this.sides.push(newSides);
   this.subtotal.push(cost);
@@ -124,7 +122,6 @@ $(document).ready(function(){
     newOrder.addSidesToOrder(newSides, newSides.costSides());
     $("span#costSides").text(newSides.costSides());
   });
-
   $("#form-drinks").submit(function(event) {
     event.preventDefault();
     var cokeInput=parseInt($("input#coke-orders").val());
@@ -137,7 +134,6 @@ $(document).ready(function(){
     newOrder.addDrinksToOrder(newDrinks, newDrinks.costDrinks());
     $("span#costDrinks").text(newDrinks.costDrinks());
   });
-
   $("#form-dessert").submit(function(event) {
     event.preventDefault();
     var brownieInput=parseInt($("input#brownies-orders").val());
@@ -147,7 +143,6 @@ $(document).ready(function(){
     newOrder.addDessertToOrder(newDessert, newDessert.costDessert());
     $("span#costDessert").text(newDessert.costDessert());
   });
-
   $("#form-pizza").submit(function(event) {
     event.preventDefault();
 
